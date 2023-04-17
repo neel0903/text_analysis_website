@@ -1,0 +1,25 @@
+/* CSS rules specific to the index.html page */
+
+#file-upload {
+    margin: 20px 0;
+  }
+  
+  #url-input {
+    margin: 20px 0;
+  }
+  
+  .btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #444;
+  }
+  

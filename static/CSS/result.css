@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #003366;
+    color: #fff;
+    padding: 10px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.scroll-box {
+    height: 200px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px;
+    text-align: center;
+    width: 80%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+th {
+    background-color: #eee;
+}
+
+.adverbs-container, .nouns-container, .adjectives-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.adverbs-container h2, .nouns-container h2, .adjectives-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.adverbs-box, .nouns-box, .adjectives-box {
+    width: 400px;
+    height: 200px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px;
+}
+/* CSS for the table */
+table {
+    border-collapse: collapse;
+    margin: 30px 0;
+  }
+  
+  table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  table th {
+    border: 1px solid #ddd;
+    background-color: #f2f2f2;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  /* CSS for the boxes */
+  .box {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto;
+  }
+  
+  .box h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .box ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  .box li {
+    margin: 5px 0;
+  }
+  

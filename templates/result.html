@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Text Analyzer - Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Text Analysis Results</h1>
+    </header>
+    <div class="content">
+        <h2>Summary</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Number of Sentences:</td>
+                    <td>{{ num_sentences }}</td>
+                </tr>
+                <tr>
+                    <td>Number of Words:</td>
+                    <td>{{ num_words }}</td>
+                </tr>
+                <tr>
+                    <td>Number of Characters:</td>
+                    <td>{{ num_chars }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Adverbs</h2>
+        <div class="scroll-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Word</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for adverb in adverbs %}
+                        <tr>
+                            <td>{{ adverb }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Adjectives</h2>
+        <div class="scroll-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Word</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for adjective in adjectives %}
+                        <tr>
+                            <td>{{ adjective }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Nouns</h2>
+        <div class="scroll-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Word</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for noun in nouns %}
+                        <tr>
+                            <td>{{ noun }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Not Clean Text</h2>
+                <div class="scroll-box">
+                    <p>{{ text }}</p>
+                </div>
+                <h2>Clean Text</h2>
+                <div class="scroll-box">
+                    <p id="clean-text">{{ text_clean }}</p>
+                </div>
+                <h2>Search text </h2>
+                <input type="text" id="search-input">
+                <button onclick="searchText()">Search</button>
+                <div id="search-results"></div>
+            </div>
+        </div>
+        
+        <script>
+        function searchText() {
+            var input = document.getElementById("search-input").value.toLowerCase();
+            var text = document.getElementById("clean-text").innerHTML.toLowerCase();
+            var regex = new RegExp("\\b" + input + "\\b", "g");
+            var matches = text.match(regex);
+            if (matches) {
+                var output = "<p>Matches found:</p><ul>";
+                for (var i = 0; i < matches.length; i++) {
+                    output += "<li>" + matches[i] + "</li>";
+                }
+                output += "</ul>";
+                document.getElementById("search-results").innerHTML = output;
+            } else {
+                document.getElementById("search-results").innerHTML = "<p>No matches found.</p>";
+            }
+        }
+        </script>
+    <h2>Person Name</h2>
+    <p>Person Name found in text: {{person_name}}</p>
+    
+    <h2>Email</h2>
+    <p>Email Address found in text: {{emails}}</p>
+
+    <h2>Phone</h2>
+    <p>Phone Number found in text: {{phone}}</p>
+
+    <h2>Address</h2>
+    <p> Address found in text: {{address}}</p>
+
+    <h2>Web Link</h2>
+    <p> Web Link found in text: {{web_link}}</p>
+     
+    <h2>Dates</h2>
+    <p> Dates found in text: {{dates}}</p>
+
+
+
+        <div class="footer">
+            <p>@ Neelkumar Patel</p>
+            <p> neelkumarpatel.com </p>
+        </div>
+    </div>
+    </body>
+    
